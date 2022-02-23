@@ -32,7 +32,7 @@ DDE2Sの設定を追加します。
 
 ■Orbitron 起動
 
-![](https://github.com/ngc6589/DDE2S/blob/master/images/DDE2S-pict1.PNG)
+![](https://github.com/ngc6589/DDE2S/blob/master/images/DDE2S-pict4.PNG)
 
 Orbitron を起動後
 - 1 Rotar/Radio タブをクリック
