@@ -339,5 +339,10 @@ namespace DDE2S
                 radioButtonStopBits2.Enabled = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+        }
     }
 }
