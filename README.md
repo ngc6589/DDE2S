@@ -48,5 +48,20 @@ YES ボタンを押すとファイル選択ダイアログが表示されます�
 DDE2S.exe 選択して開くボタンで Orbitron の設定ファイルが正しい状態に更新されます。
 
 
+■トラブルシューティング
+
+DDE2S のプログラム入れ替えなどをしたとき、Orbitron から起動しようとした際下記のようなエラーで DDE2S が起動しないことがあります。
+
+![](https://github.com/ngc6589/DDE2S/blob/master/images/DDE2S-pict12.PNG)
+
+このような場合、DDE2S のフォルダーの読み取り属性を解除するとうまくいく場合が多いです。
+
+![](https://github.com/ngc6589/DDE2S/blob/master/images/DDE2S-pict13.PNG)
+
+読み取り専用のチェックボックスが黒くなっていると思います。ここをクリックしてチェックが無い状態にする。
+
+![](https://github.com/ngc6589/DDE2S/blob/master/images/DDE2S-pict14.PNG)
+
+適用を押して完了です。
 
 
