@@ -155,6 +155,7 @@ namespace DDE2S
                         _serialPort.Handshake = Handshake.None;
                         try
                         {
+                            _serialPort.RtsEnable = true;
                             _serialPort.Open();
                             _serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
                             connectBtn.Text = "DISCONNECT";
