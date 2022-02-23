@@ -947,7 +947,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "MainForm";
-            this.Text = "DDE2S 21FEB2022";
+            this.Text = "DDE2S";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
