@@ -28,7 +28,7 @@ DDE2Sの設定を追加します。
     [Drivers]  
     DDE2S=DDE2S.exe
 
-もし、[Drivers] という記述がなければ上記2行を追加して下さい。{Drivers] があれんば、DDE2S=DDE2S.exe だけ追加。
+もし、[Drivers] という記述がなければ上記2行を追加して下さい。{Drivers] があれば、DDE2S=DDE2S.exe だけ追加。
 
 ■Orbitron 起動
 
