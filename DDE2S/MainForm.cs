@@ -131,7 +131,7 @@ namespace DDE2S
             {
                 byte[] data = ddeClient.Request("TrackingDataEx", 1, 1000);
                 string str_data = System.Text.Encoding.ASCII.GetString(data);
-                portString.setstr(str_data);
+                portString.Setstr(str_data);
                 tSatName.Text = portString.satellite;
                 tAzimuth.Text = portString.azimuth;
                 tElevation.Text = portString.elevation;
@@ -294,23 +294,17 @@ namespace DDE2S
             setting.UpdateCnnf("OUTFORMAT", textBoxStringFormat.Text);
         }
 
-        private void comboBoxSerialPortName_SelectedIndexChanged(object sender, EventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var portName = setting.sp.FirstOrDefault(x => x.Value == comboBoxSerialPortName.Text);
-            setting.UpdateCnnf("SERIALPORT", portName.Key.ToString());
+            ddeClient.Dispose();
         }
 
-        private void checkBoxNewline_CheckedChanged(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            setting.UpdateCnnf("NEWLINE", checkBoxNewline.Checked.ToString());
+            textBox2.Clear();
         }
 
-        private void checkBoxSemicolon_CheckedChanged(object sender, EventArgs e)
-        {
-            setting.UpdateCnnf("SEMICOLON", checkBoxSemicolon.Checked.ToString());
-        }
-
-        private void connectBtn_CheckedChanged(object sender, EventArgs e)
+        private void ConnectBtn_CheckedChanged(object sender, EventArgs e)
         {
             if (connectBtn.Checked == true)
             {
@@ -338,11 +332,23 @@ namespace DDE2S
                 radioButtonStopBits15.Enabled = true;
                 radioButtonStopBits2.Enabled = true;
             }
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CheckBoxSemicolon_CheckedChanged(object sender, EventArgs e)
         {
-            textBox2.Clear();
+            setting.UpdateCnnf("SEMICOLON", checkBoxSemicolon.Checked.ToString());
+        }
+
+        private void CheckBoxNewline_CheckedChanged(object sender, EventArgs e)
+        {
+            setting.UpdateCnnf("NEWLINE", checkBoxNewline.Checked.ToString());
+        }
+
+        private void ComboBoxSerialPortName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var portName = setting.sp.FirstOrDefault(x => x.Value == comboBoxSerialPortName.Text);
+            setting.UpdateCnnf("SERIALPORT", portName.Key.ToString());
         }
     }
 }

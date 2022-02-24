@@ -7,12 +7,17 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Platforms>AnyCPU;x86;x64</Platforms>
+    <ApplicationIcon>857547_s.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="images\**" />
     <EmbeddedResource Remove="images\**" />
     <None Remove="images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="857547_s.ico" />
   </ItemGroup>
 
   <ItemGroup>

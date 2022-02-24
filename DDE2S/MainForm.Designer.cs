@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tUpLink = new System.Windows.Forms.Label();
             this.labelSatName = new System.Windows.Forms.Label();
@@ -82,8 +83,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.checkBoxNewline = new System.Windows.Forms.CheckBox();
-            this.checkBoxSemicolon = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxSemicolon = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -478,7 +479,7 @@
             this.comboBoxSerialPortName.Name = "comboBoxSerialPortName";
             this.comboBoxSerialPortName.Size = new System.Drawing.Size(393, 23);
             this.comboBoxSerialPortName.TabIndex = 1;
-            this.comboBoxSerialPortName.SelectedIndexChanged += new System.EventHandler(this.comboBoxSerialPortName_SelectedIndexChanged);
+            this.comboBoxSerialPortName.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSerialPortName_SelectedIndexChanged);
             this.comboBoxSerialPortName.SelectedValueChanged += new System.EventHandler(this.ComboBoxSerialPortName_SelectedValueChanged);
             // 
             // textBox1
@@ -803,7 +804,7 @@
             this.connectBtn.Text = "Connect";
             this.connectBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.connectBtn.UseVisualStyleBackColor = true;
-            this.connectBtn.CheckedChanged += new System.EventHandler(this.connectBtn_CheckedChanged);
+            this.connectBtn.CheckedChanged += new System.EventHandler(this.ConnectBtn_CheckedChanged);
             // 
             // tSerialStatus
             // 
@@ -921,22 +922,7 @@
             this.checkBoxNewline.TabIndex = 10;
             this.checkBoxNewline.Text = "newline";
             this.checkBoxNewline.UseVisualStyleBackColor = true;
-            this.checkBoxNewline.CheckedChanged += new System.EventHandler(this.checkBoxNewline_CheckedChanged);
-            // 
-            // checkBoxSemicolon
-            // 
-            this.checkBoxSemicolon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxSemicolon.AutoSize = true;
-            this.checkBoxSemicolon.Location = new System.Drawing.Point(0, 0);
-            this.checkBoxSemicolon.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxSemicolon.Name = "checkBoxSemicolon";
-            this.checkBoxSemicolon.Size = new System.Drawing.Size(112, 21);
-            this.checkBoxSemicolon.TabIndex = 11;
-            this.checkBoxSemicolon.Text = "Semi-colon to newline";
-            this.checkBoxSemicolon.UseVisualStyleBackColor = true;
-            this.checkBoxSemicolon.CheckedChanged += new System.EventHandler(this.checkBoxSemicolon_CheckedChanged);
+            this.checkBoxNewline.CheckedChanged += new System.EventHandler(this.CheckBoxNewline_CheckedChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -956,6 +942,21 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(225, 21);
             this.tableLayoutPanel4.TabIndex = 11;
             // 
+            // checkBoxSemicolon
+            // 
+            this.checkBoxSemicolon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSemicolon.AutoSize = true;
+            this.checkBoxSemicolon.Location = new System.Drawing.Point(0, 0);
+            this.checkBoxSemicolon.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxSemicolon.Name = "checkBoxSemicolon";
+            this.checkBoxSemicolon.Size = new System.Drawing.Size(112, 21);
+            this.checkBoxSemicolon.TabIndex = 11;
+            this.checkBoxSemicolon.Text = "Semi-colon to newline";
+            this.checkBoxSemicolon.UseVisualStyleBackColor = true;
+            this.checkBoxSemicolon.CheckedChanged += new System.EventHandler(this.CheckBoxSemicolon_CheckedChanged);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -968,7 +969,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // MainForm
             // 
@@ -982,9 +983,11 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "MainForm";
             this.Text = "DDE2S";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

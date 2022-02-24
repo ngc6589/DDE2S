@@ -19,10 +19,10 @@ namespace DDE2S
         public String rangeRate = "";
         public String latitude = "";
 
-        public void setstr(String str)
+        public void Setstr(String str)
         {
-            int s1 = 0;
-            int s2 = 0;
+            int s1;
+            int s2;
             // AOS で始まる行は無視
             if (str[0] == 'A') return;
             // 衛星名
